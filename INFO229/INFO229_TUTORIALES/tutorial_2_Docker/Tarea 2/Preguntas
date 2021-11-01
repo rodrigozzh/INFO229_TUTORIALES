@@ -1,0 +1,16 @@
+
+1. ¿Cuál es la diferencia entre una Imágen Docker y un Contenedor Docker?
+
+R/ La imágen del docker son los archivos que permiten instalar una arquitectura de software, estos archivos son estáticos dentro de la arquitectura, en cambio el contenedor es el proceso en ejecución de la imagen, una imagen puede ser implementada en varios contenedores a la vez. Los contenedores siempre se crean a partir de imagenes. 
+
+2. ¿Cuál es la diferencia entre el archivo Dockerfile y el archivo Docker-compose.yml?
+
+R/ Dockerfile es el archivo de configuración que permite escribir la imagen(por ejemplo sus dependencias)y  docker compose es lo que permite describir la arquitectura del software y combinar todos los componentes del software.
+
+3. ¿Si utilizo un contenedor que contiene una Base de Datos (Redis, Mysql u otro), cómo y dónde se guardan los datos?
+
+R/ Tola la información se guardaría en la memoria asignada al contenedor que se está utilizando, por lo que si se quiere ingresar a las tablas de la base de datos se tienen que buscar en el contenedor.
+
+4. ¿Qué es un *port*? ¿Por qué algunas imágenes requieren hacer un *bind* entre distintos puertos?
+
+R/ Un port es una dirección que sirve de punto de integración del software, desde otras máquinas se pueden conectar a otros contenedores a través de os puertos, algunas imagenes requieren de bind en distintos puertos por qué 

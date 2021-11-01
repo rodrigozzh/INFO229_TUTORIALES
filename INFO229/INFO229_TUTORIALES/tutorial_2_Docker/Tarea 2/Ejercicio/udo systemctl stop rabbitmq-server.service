@@ -1,0 +1,18 @@
+[0;1;32m●[0m rabbitmq-server.service - RabbitMQ Messaging Server
+     Loaded: loaded (/lib/systemd/system/rabbitmq-server.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Thu 2021-10-28 15:20:22 -03; 11min ago
+   Main PID: 6360 (beam.smp)
+     Status: "Initialized"
+      Tasks: 163 (limit: 6988)
+     Memory: 87.9M
+     CGroup: /system.slice/rabbitmq-server.service
+             ├─6343 /bin/sh /usr/sbin/rabbitmq-server
+             ├─6360 /usr/lib/erlang/erts-10.6.4/bin/beam.smp -W w -A 128 -MBas ageffcbf -MHas ageffcbf -MBlmbcs 512 -MHlmbcs 512 -MMmcs 30 -P 1048576 -t 5000000 -stbt db -zdbbl 128000 -K true -- -root /usr/lib/erlang -progname erl -- -home /var/lib/rabbitmq -- -pa /usr/lib/rabbitmq/lib/rabbitmq_server-3.8.2/ebin  -noshell -noinput -s rabbit boot -sname rabbit@rodrigo-Aspire-A315-41 -boot start_sasl -kernel inet_default_connect_options [{nodelay,true}] -sasl errlog_type error -sasl sasl_error_logger false -rabbit lager_log_root "/var/log/rabbitmq" -rabbit lager_default_file "/var/log/rabbitmq/rabbit@rodrigo-Aspire-A315-41.log" -rabbit lager_upgrade_file "/var/log/rabbitmq/rabbit@rodrigo-Aspire-A315-41_upgrade.log" -rabbit feature_flags_file "/var/lib/rabbitmq/mnesia/rabbit@rodrigo-Aspire-A315-41-feature_flags" -rabbit enabled_plugins_file "/etc/rabbitmq/enabled_plugins" -rabbit plugins_dir "/usr/lib/rabbitmq/plugins:/usr/lib/rabbitmq/lib/rabbitmq_server-3.8.2/plugins" -rabbit plugins_expand_dir "/var/lib/rabbitmq/mnesia/rabbit@rodrigo-Aspire-A315-41-plugins-expand" -os_mon start_cpu_sup false -os_mon start_disksup false -os_mon start_memsup false -mnesia dir "/var/lib/rabbitmq/mnesia/rabbit@rodrigo-Aspire-A315-41" -ra data_dir "/var/lib/rabbitmq/mnesia/rabbit@rodrigo-Aspire-A315-41/quorum" -kernel inet_dist_listen_min 25672 -kernel inet_dist_listen_max 25672 --
+             ├─6705 erl_child_setup 65536
+             ├─6742 inet_gethost 4
+             └─6743 inet_gethost 4
+
+oct 28 15:20:18 rodrigo-Aspire-A315-41 systemd[1]: Starting RabbitMQ Messaging Server...
+oct 28 15:20:22 rodrigo-Aspire-A315-41 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mrabbitmq-server.service: Supervising process 6360 which is not our child. We'll most likely not notice when it exits.[0m
+oct 28 15:20:22 rodrigo-Aspire-A315-41 systemd[1]: Started RabbitMQ Messaging Server.
+oct 28 15:20:22 rodrigo-Aspire-A315-41 systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mrabbitmq-server.service: Supervising process 6360 which is not our child. We'll most likely not notice when it exits.[0m
