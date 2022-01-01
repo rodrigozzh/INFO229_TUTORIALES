@@ -47,8 +47,8 @@ async def on_ready():
         print(channel)
         print(channel.id)
 
-    channel = bot.get_channel(913706828502814760)
-    await channel.send('¡Hola!')
+    channel = bot.get_channel(908505071887732768)
+    await channel.send('¡Hola ratón con cola!')
 
 
 @bot.event
@@ -69,11 +69,19 @@ async def cumpleaños(ctx):
 
     channelMQ.basic_publish(exchange='cartero', routing_key="birthday", body=message)
 
-@bot.command(name='add-birthday', help='Permite añadir el cumpleaño de un nuevo miembro de la GUILD que se pasa en parámetro. Ejemplo: !birthday MatthieuVernier 1985-02-13')
+@bot.command(name='add-birthday', help='Permite añadir el cumpleaños de un nuevo miembro de la GUILD que se pasa en parámetro. Ejemplo: !birthday MatthieuVernier 1985-02-13')
 async def cumpleaños(ctx):
     message =  ctx.message.content
     print("send a new mesage to rabbitmq: "+message)
     channelMQ.basic_publish(exchange='cartero', routing_key="birthday", body=message)
+
+
+@bot.command(name='search', help='Busca un video de youtube con !search seguido de una palabra.')
+async def youtube_search(ctx):
+    message =  ctx.message.content
+    print("send a new mesage to rabbitmq: "+message)
+
+    channelMQ.basic_publish(exchange='cartero', routing_key="youtube", body=message)
 
 ############ CONSUMER ###############
 
@@ -104,7 +112,7 @@ def writer(bot):
     print(' [*] Waiting for messages. To exit press CTRL+C')
 
     async def write(message):
-        channel = bot.get_channel(908505071887732768)#913706828502814760
+        channel = bot.get_channel(908505071887732768)#908505071887732768
         await channel.send(message)
 
     def callback(ch, method, properties, body):

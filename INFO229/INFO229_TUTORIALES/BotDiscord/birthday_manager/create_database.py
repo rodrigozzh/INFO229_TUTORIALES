@@ -21,7 +21,7 @@ def create_database(db_connection,db_name,cursor):
 def insert_data(cursor):
     print("insert")
     cursor.execute('''INSERT INTO birthday (member,date) VALUES
-    ('MatthieuVernier','1985-02-13');
+    ('Rorrito','1997-02-28');
     ''')
     cursor.execute("COMMIT;") 
 

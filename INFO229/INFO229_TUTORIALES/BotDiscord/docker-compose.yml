@@ -10,6 +10,16 @@ services:
         environment:
           - RABBITMQ_HOST=rabbitmq
         restart: 'always'
+
+    youtube:
+        build:
+            context: youtube/
+        container_name: youtube
+        networks:
+          - network
+        environment:
+          - RABBITMQ_HOST=rabbitmq
+        restart: 'always'
         
     birthday_database:
         image: mariadb:10.1.48
